@@ -22,10 +22,7 @@ with open(filepath) as fp:
 		linha = line.strip().split(' ')
 		if linha[0] == 'ADDI':
 			destino = list(linha[1])
-			if(destino[1] == 's'):
-				registradores.setS(int(destino[2]), linha[3])
-			elif(destino[1] == 't'):
-				registradores.setT(int(destino[2]), linha[3])
+			set_valor_registrador(destino, linha[3])
 
 		elif linha[0] == 'ADD':
 			destino = list(linha[1])
