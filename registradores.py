@@ -14,3 +14,8 @@ class Registradores(object):
 
 	def getT(self, posicao):
 		return self.t[posicao]
+
+	def pretty_print(self):
+		print("Registradores $t \t Registradores $s")
+		for x in range(8):
+			print('t{}: {} \t\t\t s{}: {}'.format(x, self.t[x], x, self.s[x])) 

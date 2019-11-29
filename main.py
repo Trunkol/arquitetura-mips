@@ -23,21 +23,27 @@ with open(filepath) as fp:
 		if linha[0] == 'ADDI':
 			destino = list(linha[1])
 			set_valor_registrador(destino, linha[3])
+			print("\n#############################################\n Comando Executado: {} \n#############################################\n".format(" ".join(linha)))
+			registradores.pretty_print()
 
 		elif linha[0] == 'ADD':
 			destino = list(linha[1])
 			primeiro_operando_valor = int(get_valor_registrador(list(linha[2])))
 			segundo_operando_valor = int(get_valor_registrador(list(linha[3])))
 			set_valor_registrador(destino, primeiro_operando_valor + segundo_operando_valor)
+			print("\n#############################################\n Comando Executado: {} \n#############################################\n".format(" ".join(linha)))
+			registradores.pretty_print()
 			
 		elif linha[0] == 'SUB':
 			destino = list(linha[1])
 			primeiro_operando_valor = int(get_valor_registrador(list(linha[2])))
 			segundo_operando_valor = int(get_valor_registrador(list(linha[3])))
 			set_valor_registrador(destino, primeiro_operando_valor - segundo_operando_valor)
+			print("\n#############################################\n Comando Executado: {} \n#############################################\n".format(" ".join(linha)))
+			registradores.pretty_print()
 
 		else:
-			print('hello')
+			pass
 
 		line = fp.readline()
 		cnt += 1
